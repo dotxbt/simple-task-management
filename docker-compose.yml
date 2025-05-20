@@ -1,0 +1,35 @@
+services:
+  app:
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pwd123
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/samir_test
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=pwd123
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SERVER.PORT=9696
+
+    ports:
+      - "9696:9696"
+
+  db:
+    image: postgres
+    container_name: test-samir
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pwd123
+      - POSTGRES_DB=samir_test
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+    postgres_data:
