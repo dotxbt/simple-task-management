@@ -17,7 +17,7 @@ import java.util.List;
 @Repository
 public class TaskRepositoryImpl implements TaskRepository {
     @Autowired
-    private JdbcTemplate db;
+    JdbcTemplate db;
 
     @Override
     public List<TaskDao> findAll(@Nullable String complete) {

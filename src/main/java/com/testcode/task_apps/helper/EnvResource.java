@@ -3,7 +3,6 @@ package com.testcode.task_apps.helper;
 import com.testcode.task_apps.configuration.ErrorHandlerException;
 import com.testcode.task_apps.model.ErrorMessage;
 import lombok.Data;
-import lombok.Getter;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;

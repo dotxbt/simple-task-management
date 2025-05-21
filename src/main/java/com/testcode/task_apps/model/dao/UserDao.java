@@ -34,4 +34,12 @@ public class UserDao {
                 .role(rs.getString("role"))
                 .build();
     }
+
+    public static RowMapper<UserDao> toFindAllRowMapper() {
+        return (rs, rowNum) -> UserDao.builder()
+                .id(rs.getInt("id"))
+                .email(rs.getString("email"))
+                .role(rs.getString("role"))
+                .build();
+    }
 }

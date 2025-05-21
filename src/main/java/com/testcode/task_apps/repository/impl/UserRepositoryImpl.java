@@ -14,12 +14,12 @@ import java.util.List;
 @Repository
 public class UserRepositoryImpl implements UserRepository {
     @Autowired
-    private JdbcTemplate db;
+    JdbcTemplate db;
 
 
     @Override
     public List<UserDao> findAll() {
-        return db.query("SELECT * FROM users", UserDao.toRowMapper());
+        return db.query("SELECT * FROM users", UserDao.toFindAllRowMapper());
     }
 
     @Override

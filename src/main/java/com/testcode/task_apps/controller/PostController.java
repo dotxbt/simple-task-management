@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/posts")
 public class PostController {
     @Autowired
-    private PostService postService;
+    PostService postService;
 
     @GetMapping()
     public ResponseData<List<PostDto>> getPosts() {

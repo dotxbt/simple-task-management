@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("users")
 public class UserController {
     @Autowired
-    private UserService service;
+    UserService service;
 
     @GetMapping()
     public ResponseData<List<UserDao>> getAll() {

@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class TaskServiceImpl implements TaskService {
     @Autowired
-    private TaskRepository repository;
+    TaskRepository repository;
 
     @Override
     public ResponseData<List<TaskDao>> findAll(@Nullable String complete) {

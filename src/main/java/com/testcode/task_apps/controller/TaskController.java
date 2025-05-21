@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/task")
 public class TaskController {
     @Autowired
-    private TaskService service;
+    TaskService service;
 
     @GetMapping()
     public ResponseData<List<TaskDao>> getAllTask(@Nullable @RequestParam(value = "complete") String complete ) {

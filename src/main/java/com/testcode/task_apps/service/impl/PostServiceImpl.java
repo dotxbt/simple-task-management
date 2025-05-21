@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class PostServiceImpl implements PostService {
     @Autowired
-    private WebClient client;
+    WebClient client;
 
     @Override
     public ResponseData<List<PostDto>> getPosts() {
